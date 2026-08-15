@@ -37,8 +37,7 @@ The point of the project is independent verifiability, so the repository ships a
 
 ```bash
 # Only dependency: the `cryptography` library. No AETHERIS server required.
-python tools/verify_aetheris_bundle.py samples/Hacker101-Sandbox.aetheris-bundle.json \
-    --pubkey  path/to/authoritative_pubkey.pem
+python tools/verify_aetheris_bundle.py samples/Hacker101-Sandbox.aetheris-bundle.json --pubkey PUBLIC_KEY.pem
 ```
 
 The verifier, in isolation:
@@ -151,11 +150,10 @@ Short write-ups on the non-obvious decisions:
 
 ## Status & access
 
-<!-- TODO(Bruno): fill these before publishing -->
 - **Status:** working system; core hardened and independently verifiable.
-- **Source availability:** proprietary. This repository is a showcase — architecture, threat model, and a verifiable sample bundle are public; the implementation is available for review on request.
-- **Authoritative public key:** published at `<TODO: DNS TXT / site / HackerOne profile>` for out-of-band bundle verification.
-- **Contact:** `<TODO: email / handle>`
+- **Source availability:** proprietary. This repository is a showcase — the architecture, threat model, and a verifiable sample bundle are public; the backend implementation is available for review on request.
+- **Authoritative public key:** the canonical Ed25519 public key is published in this repository as [`PUBLIC_KEY.pem`](./PUBLIC_KEY.pem). Pass it to the verifier with `--pubkey PUBLIC_KEY.pem` to check any bundle's signature against the out-of-band key.
+- **Contact:** aragaobruno@gmail.com
 
 ---
 

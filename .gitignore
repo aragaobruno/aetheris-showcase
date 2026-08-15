@@ -1,4 +1,5 @@
 *.pem
+!PUBLIC_KEY.pem
 *.key
 keys/
 *.db
