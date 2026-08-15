@@ -1,0 +1,57 @@
+{
+  "manifest": {
+    "format": "AETHERIS_FORENSIC_BUNDLE_V1",
+    "target_id": 1,
+    "target_name": "Hacker101 CTF Sandbox",
+    "operational_mode": "BUG_BOUNTY",
+    "exported_at": "2026-08-15T00:21:33.714256+00:00",
+    "genesis_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "head_hash": "6bed8867460535c64f8b71ab31a0e0f86cfcb332263e35800ff09d965e0a66bf",
+    "total_evidences": 1,
+    "total_findings": 1
+  },
+  "ledger_chain": [
+    {
+      "id": 1,
+      "target_id": 1,
+      "source_module": "recon.http_inspector",
+      "captured_at": "2026-08-15T00:21:33.671131+00:00",
+      "canonical_payload": "{\"endpoint\":\"https://ctf.hacker101.com/index.php\",\"headers\":{\"content-type\":\"text/html; charset=UTF-8\",\"server\":\"Apache\"},\"security_headers_missing\":[\"Strict-Transport-Security\",\"Content-Security-Policy\"],\"status_code\":200}",
+      "payload_sha": "0120084816b39980b0459f88e11a4baba6180149544a5fc482cbbfee1814af5f",
+      "prev_sha": "0000000000000000000000000000000000000000000000000000000000000000",
+      "row_sha": "6bed8867460535c64f8b71ab31a0e0f86cfcb332263e35800ff09d965e0a66bf"
+    }
+  ],
+  "findings": [
+    {
+      "id": 1,
+      "title": "Missing Strict-Transport-Security Header",
+      "description": "Endpoint ctf.hacker101.com lacks HSTS.",
+      "severity": "LOW",
+      "status": "CONFIRMED",
+      "remediation": null,
+      "confirmed_at": "2026-08-15T00:21:33.699829",
+      "confirmed_by": "AETHERIS-Automated-Auditor",
+      "anchored_evidence_ids": [
+        1
+      ],
+      "observations": [
+        {
+          "kind": "OBSERVED",
+          "statement": "Target responded with HTTP 200, missing Strict-Transport-Security header.",
+          "evidence_id": 1
+        },
+        {
+          "kind": "INFERRED",
+          "statement": "Absence of HSTS allows potential plaintext downgrade on untrusted networks.",
+          "evidence_id": 1
+        }
+      ]
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAswoBAk3icvELt02LEvBL9VoCI4ugUCFg6awld463PDg=\n-----END PUBLIC KEY-----\n",
+    "signature_hex": "49eec5ec9c3aa9a0e1f10dce41dbe9ef1f93fa5d7842566d169e8f359438a6e07a1688be25eb5a96e9ee0c7ed69d8e8eefc220fc4fba5c840c9d789408591d04"
+  }
+}
