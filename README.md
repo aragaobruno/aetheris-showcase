@@ -54,6 +54,26 @@ Design choices that matter for a hostile reviewer:
 
 ---
 
+## What it looks like
+
+The standalone verifier auditing a signed bundle — the core promise, run end to end:
+
+![Standalone verifier output](./assets/verifier-terminal.png)
+
+The evidence ledger: each observation SHA-256 chained to the previous block.
+
+![Evidence ledger](./assets/evidence-ledger.png)
+
+Scope configuration and target governance:
+
+![Scope configuration](./assets/scope-config.png)
+
+Findings anchored to empirical evidence proofs:
+
+![Findings & evidence anchors](./assets/findings.png)
+
+---
+
 ## Architecture
 
 ```
